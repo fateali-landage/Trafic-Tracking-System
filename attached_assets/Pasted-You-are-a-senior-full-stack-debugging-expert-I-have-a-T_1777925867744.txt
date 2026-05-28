@@ -1,0 +1,99 @@
+You are a senior full-stack debugging expert.
+
+I have a Traffic Tracking System project with:
+
+Frontend: HTML, CSS, JavaScript
+Backend: Flask API (already deployed)
+API Base URL: https://traffic-tracking-system.onrender.com/api
+
+Your task is to perform a COMPLETE DEBUGGING AUDIT and FIX all issues.
+
+---
+
+🎯 OBJECTIVES:
+
+1. Identify all errors (syntax, logic, runtime)
+2. Fix broken API calls
+3. Ensure full frontend-backend integration works
+4. Improve stability and error handling
+5. Do NOT break existing functionality
+
+---
+
+🔍 CHECK THESE AREAS:
+
+1. API INTEGRATION
+
+   * Verify all fetch calls use correct endpoints
+   * Ensure API_BASE includes /api
+   * Handle HTTP errors (400, 401, 500)
+   * Add proper try/catch handling
+
+2. AUTHENTICATION
+
+   * Token storage in localStorage
+   * Token usage in Authorization header
+   * Redirect if token missing
+   * Logout functionality
+
+3. FRONTEND ERRORS
+
+   * Fix JavaScript errors
+   * Check null element selectors
+   * Ensure scripts load in correct order
+   * Fix broken event listeners
+
+4. UI/UX ISSUES
+
+   * Broken buttons
+   * Missing loading states
+   * Poor error messages → replace with user-friendly messages
+
+5. DATA HANDLING
+
+   * Handle empty API responses
+   * Prevent crashes on undefined values
+   * Safe JSON parsing
+
+6. CONSOLE ERRORS
+
+   * Remove all browser console errors
+   * Fix network request failures
+
+---
+
+🛠️ REQUIRED FIXES:
+
+* Add centralized API helper function
+* Add global error handler
+* Improve alert system (use toast or UI alerts)
+* Add loading indicators for API calls
+
+---
+
+📁 OUTPUT FORMAT:
+
+* Provide corrected:
+
+  * auth.js
+  * dashboard.js
+  * main.js
+  * any HTML fixes
+* Highlight what was wrong and how it was fixed
+* Keep code clean and production-ready
+
+---
+
+⚠️ IMPORTANT RULES:
+
+* Do NOT change backend API
+* Do NOT remove features
+* Only fix and improve
+* Keep code simple (no frameworks)
+
+---
+
+🚀 BONUS:
+
+* Add retry mechanism for failed API calls
+* Add fallback UI when backend is down

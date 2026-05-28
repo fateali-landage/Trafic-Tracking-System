@@ -1,0 +1,108 @@
+You are a senior full-stack developer and UI/UX designer.
+
+I have an existing Traffic Tracking System web app with:
+
+Frontend: HTML, CSS, JavaScript (no framework)
+Backend API: Flask (already deployed)
+API Base URL: https://traffic-tracking-system.onrender.com/api
+
+Your task is to UPGRADE this project into a modern SaaS-style application with a professional UI/UX and additional features.
+
+---
+
+🎯 GOALS:
+
+1. Improve UI/UX to modern SaaS level
+2. Add useful real-world features
+3. Keep it simple (no React, no heavy frameworks)
+4. Maintain compatibility with existing API endpoints
+
+---
+
+🎨 UI/UX REQUIREMENTS:
+
+* Use modern design (clean, minimal, responsive)
+* Add:
+
+  * Sidebar navigation (Dashboard, Violations, Profile, Logout)
+  * Top navbar with user info
+  * Cards for stats (Total violations, Paid, Pending, Total fines)
+  * Table with sorting, filtering, and search
+  * Status badges (paid, pending)
+* Use:
+
+  * Bootstrap 5 OR Tailwind (choose one)
+* Add loading states and empty states
+* Add toast notifications instead of alerts
+* Improve typography and spacing
+
+---
+
+⚙️ FEATURES TO ADD:
+
+1. 🔍 Search & Filter Violations
+
+   * Filter by status (paid/pending)
+   * Search by vehicle number
+
+2. 📊 Dashboard Analytics
+
+   * Show total fines, paid vs pending
+   * Simple charts (Chart.js)
+
+3. 👤 User Profile Page
+
+   * Show name, email
+   * Option to update profile (UI only if backend not ready)
+
+4. 💳 Payment UI Enhancement
+
+   * Improve payment modal UI
+   * Show payment success simulation
+
+5. 🔔 Notifications
+
+   * Show recent activity (last violations)
+
+6. 📱 Responsive Design
+
+   * Mobile-friendly layout
+
+---
+
+🧠 TECH RULES:
+
+* Do NOT change backend API
+* Use existing endpoints:
+
+  * /api/auth/login
+  * /api/auth/register
+  * /api/traffic/violations
+* Use:
+  const API_BASE = "https://traffic-tracking-system.onrender.com/api";
+
+---
+
+📁 OUTPUT FORMAT:
+
+* Provide updated:
+
+  * index.html
+  * dashboard.html
+  * login.html
+  * CSS file
+  * JS files (modular)
+* Keep code clean and well-structured
+* Add comments explaining major parts
+
+---
+
+🚀 BONUS:
+
+* Add dark mode toggle
+* Add smooth animations (CSS)
+
+---
+
+Important:
+Do not break existing functionality. Improve design + add features incrementally.

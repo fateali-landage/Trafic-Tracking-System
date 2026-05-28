@@ -1,0 +1,210 @@
+Perform a complete end-to-end audit of my entire full-stack Traffic Tracking System project and automatically fix every issue found.
+
+IMPORTANT:
+
+* First deeply analyze the entire project before changing anything.
+* Understand the current architecture, frontend, backend, database, authentication flow, deployment setup, and API integration.
+* Preserve all working functionality.
+* Do NOT unnecessarily rewrite the entire project.
+* Focus on debugging, stabilizing, optimizing, and improving the existing project professionally.
+
+=================================
+🔥 FULL PROJECT AUDIT
+=====================
+
+Audit the entire codebase including:
+
+Frontend:
+
+* HTML/CSS/JavaScript or React/Vite
+* UI/UX
+* Navigation
+* Forms
+* Dashboard
+* Charts
+* Responsive design
+* API integration
+* Local storage/session handling
+* Authentication flow
+* Route handling
+* Loading states
+* Error states
+
+Backend:
+
+* Flask app structure
+* Blueprint registration
+* API routes
+* SQLAlchemy models
+* JWT authentication
+* Password hashing
+* Request validation
+* Error handling
+* Environment variables
+* Gunicorn compatibility
+* Deployment configuration
+* Middleware
+* Logging
+* CORS
+
+Database:
+
+* Supabase PostgreSQL connection
+* Connection string
+* Table creation
+* Relationships
+* Foreign keys
+* Indexes
+* Migration issues
+* Missing tables
+* Data consistency
+
+Deployment:
+
+* Render backend deployment
+* Vercel frontend deployment
+* Production API URLs
+* Environment variables
+* Build configuration
+* Runtime issues
+
+=================================
+🔥 DETECT ALL ERRORS
+====================
+
+Find and fix:
+
+* 404 API errors
+* 500 Internal Server Errors
+* Failed fetch requests
+* Database connection failures
+* Supabase authentication errors
+* CORS issues
+* Incorrect API URLs
+* Missing routes
+* Broken imports
+* Circular imports
+* Missing environment variables
+* Broken authentication
+* Invalid JWT handling
+* SQLAlchemy errors
+* Flask startup crashes
+* Gunicorn startup issues
+* Render deployment failures
+* Vercel deployment issues
+* Broken frontend pages
+* Console errors
+* JavaScript runtime errors
+* CSS/UI issues
+* Broken buttons/forms
+* Broken dashboard data
+* Incorrect redirects
+* Missing tables
+* Migration problems
+* Dependency/version conflicts
+
+=================================
+🔥 VERIFY ALL FEATURES
+======================
+
+Test and verify:
+
+* Register works
+* Login works
+* Logout works
+* JWT token generation works
+* Dashboard loads correctly
+* Violations page works
+* Fine management works
+* Reports work
+* Database CRUD operations work
+* Frontend/backend communication works
+* API responses are correct
+* Supabase stores data correctly
+
+=================================
+🔥 SECURITY AUDIT
+=================
+
+Check and fix:
+
+* Hardcoded secrets
+* Unsafe API exposure
+* Weak authentication
+* SQL injection risks
+* Open CORS vulnerabilities
+* Exposed environment variables
+* Password handling issues
+* JWT security weaknesses
+
+=================================
+🔥 PERFORMANCE AUDIT
+====================
+
+Optimize:
+
+* Slow API calls
+* Unoptimized database queries
+* Duplicate requests
+* Large assets
+* Unused files
+* Inefficient rendering
+* Backend bottlenecks
+
+=================================
+🔥 UI/UX AUDIT
+==============
+
+Improve:
+
+* Responsive design
+* Mobile compatibility
+* Dashboard appearance
+* Navigation experience
+* Form validation
+* Loading animations
+* Empty states
+* Error messages
+* Professional styling
+* Accessibility
+* Consistent spacing/layout
+* Modern admin dashboard feel
+
+=================================
+🔥 DATABASE FIXES
+=================
+
+If tables are missing:
+
+* Automatically create tables
+* Ensure db.create_all() works
+* Ensure models are imported properly
+* Ensure PostgreSQL compatibility
+* Ensure Supabase integration works correctly
+
+=================================
+🔥 FINAL TASK
+=============
+
+After auditing:
+
+1. Generate a detailed report of all detected issues.
+2. Explain root causes.
+3. Automatically fix all issues.
+4. Refactor unstable code where necessary.
+5. Improve project stability and maintainability.
+6. Ensure production readiness.
+7. Ensure there are no remaining 404 or 500 errors.
+8. Ensure frontend + backend + database work perfectly together.
+9. Ensure deployment works correctly on Render + Vercel.
+10. Ensure the project is stable, secure, optimized, and professional.
+
+Finally provide:
+
+* Fully fixed code
+* Optimized structure
+* Summary of all fixes applied
+* Deployment-ready version
+* Recommendations for future scalability
+
+The final result should be a fully stable, enterprise-grade Traffic Tracking System with modern UI/UX, clean architecture, secure authentication, stable APIs, proper database integration, and zero major deployment/runtime errors.

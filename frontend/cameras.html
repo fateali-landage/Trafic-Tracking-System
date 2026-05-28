@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cameras — TrafficTrack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<div class="app-shell">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-icon">🚦</div>
+      <div>
+        <div class="brand-name">TrafficTrack</div>
+        <div class="brand-sub">Smart City Platform</div>
+      </div>
+    </div>
+    <div class="sidebar-section">Main Menu</div>
+    <nav class="sidebar-nav">
+      <a class="nav-item" href="dashboard.html" data-page="dashboard.html">
+        <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        Dashboard
+      </a>
+      <a class="nav-item" href="violations.html" data-page="violations.html">
+        <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+        Violations
+        <span class="nav-badge" id="pendingBadge" style="display:none"></span>
+      </a>
+      <a class="nav-item" href="vehicles.html" data-page="vehicles.html">
+        <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M8 18a2 2 0 100-4 2 2 0 000 4zm8 0a2 2 0 100-4 2 2 0 000 4zM3 5h2l2.5 7H17l2-5H7"/></svg>
+        Vehicles
+      </a>
+      <a class="nav-item" href="reports.html" data-page="reports.html">
+        <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        Reports
+      </a>
+      <a class="nav-item" href="cameras.html" data-page="cameras.html">
+        <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M15 10l4.553-2.069A1 1 0 0121 8.82v6.36a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+        Cameras
+      </a>
+      <div class="sidebar-section admin-only" style="display:none;margin-top:8px;">Admin</div>
+      <a class="nav-item admin-only" href="users.html" data-page="users.html" style="display:none">
+        <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        Users
+      </a>
+      <div class="sidebar-section" style="margin-top:8px;">Account</div>
+      <a class="nav-item" href="profile.html" data-page="profile.html">
+        <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+        Profile
+      </a>
+      <div class="nav-item" data-action="logout">
+        <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+        Sign Out
+      </div>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user" id="sidebarUser"></div>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      <div class="topbar-title">Camera Management</div>
+      <div class="topbar-actions">
+        <button class="icon-btn" id="themeToggle" title="Toggle dark mode">🌙</button>
+        <div class="topbar-user">
+          <div>
+            <div class="topbar-user-name" id="topbarUserName">Loading…</div>
+            <div class="topbar-user-role" id="topbarUserRole"></div>
+          </div>
+          <div class="avatar" id="topbarAvatar">?</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="page-body">
+      <div class="page-header" style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+        <div>
+          <h1>Camera Management</h1>
+          <p>Monitor and manage traffic surveillance cameras.</p>
+        </div>
+        <button class="btn btn-primary admin-only" id="addCameraBtn" style="display:none;" onclick="openAddModal()">+ Add Camera</button>
+      </div>
+
+      <!-- Summary Stats -->
+      <div class="stat-grid" style="grid-template-columns:repeat(4,1fr);margin-bottom:24px;" id="cameraStats">
+        <div class="stat-card"><div class="stat-icon blue">📹</div><div class="stat-info"><div class="stat-label">Total Cameras</div><div class="stat-value" id="cTotal">—</div></div></div>
+        <div class="stat-card"><div class="stat-icon green">🟢</div><div class="stat-info"><div class="stat-label">Online</div><div class="stat-value" id="cOnline">—</div></div></div>
+        <div class="stat-card"><div class="stat-icon red">🔴</div><div class="stat-info"><div class="stat-label">Offline</div><div class="stat-value" id="cOffline">—</div></div></div>
+        <div class="stat-card"><div class="stat-icon amber">🤖</div><div class="stat-info"><div class="stat-label">AI Enabled</div><div class="stat-value" id="cAI">—</div></div></div>
+      </div>
+
+      <!-- Camera Cards Grid -->
+      <div class="camera-grid" id="cameraGrid">
+        <!-- filled by JS -->
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- Add/Edit Camera Modal -->
+<div class="modal-overlay" id="cameraModal">
+  <div class="modal-box">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
+      <div class="modal-title" style="margin:0;" id="cameraModalTitle">📹 Add Camera</div>
+      <button onclick="closeModal('cameraModal')" style="background:none;border:none;cursor:pointer;color:var(--text-muted);font-size:20px;">×</button>
+    </div>
+    <form onsubmit="submitCamera(event)" id="cameraForm">
+      <input type="hidden" id="editCameraId">
+      <div class="form-group">
+        <label class="form-label">Camera Name <span style="color:var(--danger)">*</span></label>
+        <input type="text" id="cName" class="form-control" placeholder="e.g. Main Junction Cam" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Location <span style="color:var(--danger)">*</span></label>
+        <input type="text" id="cLocation" class="form-control" placeholder="e.g. Main St & 1st Ave" required>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="form-group">
+          <label class="form-label">Latitude</label>
+          <input type="number" id="cLat" class="form-control" placeholder="40.7128" step="any">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Longitude</label>
+          <input type="number" id="cLon" class="form-control" placeholder="-74.0060" step="any">
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="form-group">
+          <label class="form-label">Status</label>
+          <select id="cStatus" class="form-control">
+            <option value="active">Active</option>
+            <option value="offline">Offline</option>
+            <option value="maintenance">Maintenance</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">AI Detection</label>
+          <select id="cAIEnabled" class="form-control">
+            <option value="false">Disabled</option>
+            <option value="true">Enabled</option>
+          </select>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:4px;">
+        <button type="button" class="btn btn-outline" style="flex:1;justify-content:center;" onclick="closeModal('cameraModal')">Cancel</button>
+        <button type="submit" class="btn btn-primary" style="flex:1;justify-content:center;" id="cameraSubmitBtn">Save Camera</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/cameras.js"></script>
+</body>
+</html>

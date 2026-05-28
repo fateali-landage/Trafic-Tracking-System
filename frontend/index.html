@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrafficTrack — Smart Traffic Violation Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="landing-hero">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <!-- Nav -->
+  <nav class="landing-nav">
+    <div class="brand">
+      <div class="brand-icon">🚦</div>
+      <span class="brand-name">TrafficTrack</span>
+    </div>
+    <div class="landing-nav-links">
+      <a href="login.html" class="btn btn-outline" style="border-color:rgba(255,255,255,.2);color:#fff;">Sign In</a>
+      <a href="login.html" class="btn btn-primary">Get Started →</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero-content">
+    <div class="hero-badge">🚀 Modern Traffic Management Platform</div>
+    <h1 class="hero-title">
+      Smart Traffic<br>
+      <span class="gradient-text">Violation Tracking</span>
+    </h1>
+    <p class="hero-sub">
+      A powerful SaaS platform for traffic authorities and citizens to manage, track,
+      and resolve traffic violations — all in one place.
+    </p>
+    <div class="hero-actions">
+      <a href="login.html" class="btn btn-primary btn-lg">🔑 Sign In to Dashboard</a>
+      <a href="login.html" class="btn btn-lg" style="border:1px solid rgba(255,255,255,.25);color:#fff;background:transparent;">Create Account →</a>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="feature-icon">🔐</div>
+      <div class="feature-title">Secure JWT Auth</div>
+      <div class="feature-desc">Role-based access for admins, officers, and citizens with encrypted tokens.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📊</div>
+      <div class="feature-title">Live Analytics</div>
+      <div class="feature-desc">Real-time charts on violations, fines collected, and status breakdown.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔍</div>
+      <div class="feature-title">Search & Filter</div>
+      <div class="feature-desc">Instantly search violations by vehicle number or filter by status.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">💳</div>
+      <div class="feature-title">Payment Ready</div>
+      <div class="feature-desc">Payment gateway hooks ready for Razorpay or Stripe integration.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🌙</div>
+      <div class="feature-title">Dark Mode</div>
+      <div class="feature-desc">Comfortable viewing in any lighting condition with a single toggle.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📱</div>
+      <div class="feature-title">Fully Responsive</div>
+      <div class="feature-desc">Works perfectly on desktop, tablet, and mobile devices.</div>
+    </div>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+<script>
+  Theme.init();
+  if (Auth.isLoggedIn()) window.location.href = 'dashboard.html';
+</script>
+</body>
+</html>

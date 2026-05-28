@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile — TrafficTrack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<div class="app-shell">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-icon">🚦</div>
+      <div>
+        <div class="brand-name">TrafficTrack</div>
+        <div class="brand-sub">Smart City Platform</div>
+      </div>
+    </div>
+    <div class="sidebar-section">Main Menu</div>
+    <nav class="sidebar-nav">
+      <a class="nav-item" href="dashboard.html" data-page="dashboard.html">
+        <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        Dashboard
+      </a>
+      <a class="nav-item" href="violations.html" data-page="violations.html">
+        <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+        Violations
+        <span class="nav-badge" id="pendingBadge" style="display:none"></span>
+      </a>
+      <a class="nav-item" href="vehicles.html" data-page="vehicles.html">
+        <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M8 18a2 2 0 100-4 2 2 0 000 4zm8 0a2 2 0 100-4 2 2 0 000 4zM3 5h2l2.5 7H17l2-5H7"/></svg>
+        Vehicles
+      </a>
+      <a class="nav-item" href="reports.html" data-page="reports.html">
+        <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        Reports
+      </a>
+      <a class="nav-item" href="cameras.html" data-page="cameras.html">
+        <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M15 10l4.553-2.069A1 1 0 0121 8.82v6.36a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+        Cameras
+      </a>
+      <div class="sidebar-section admin-only" style="display:none;margin-top:8px;">Admin</div>
+      <a class="nav-item admin-only" href="users.html" data-page="users.html" style="display:none">
+        <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        Users
+      </a>
+      <div class="sidebar-section" style="margin-top:8px;">Account</div>
+      <a class="nav-item" href="profile.html" data-page="profile.html">
+        <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+        Profile
+      </a>
+      <div class="nav-item" data-action="logout">
+        <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+        Sign Out
+      </div>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user" id="sidebarUser"></div>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      <div class="topbar-title">Profile</div>
+      <div class="topbar-actions">
+        <button class="icon-btn" id="themeToggle" title="Toggle dark mode">🌙</button>
+        <div class="topbar-user">
+          <div>
+            <div class="topbar-user-name" id="topbarUserName">Loading…</div>
+            <div class="topbar-user-role" id="topbarUserRole"></div>
+          </div>
+          <div class="avatar" id="topbarAvatar">?</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="page-body">
+      <div class="page-header">
+        <h1>My Profile</h1>
+        <p>Manage your account information and preferences.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:20px;align-items:start;" id="profileGrid">
+
+        <div class="card">
+          <div class="profile-banner"></div>
+          <div class="profile-info">
+            <div class="profile-avatar-wrap">
+              <div class="avatar avatar-xl" id="profileAvatar">?</div>
+            </div>
+            <div style="font-size:20px;font-weight:800;color:var(--text-primary);margin-bottom:4px;" id="profileName">—</div>
+            <div style="font-size:13px;color:var(--text-secondary);margin-bottom:12px;" id="profileEmail">—</div>
+            <span class="badge badge-info" id="profileRole">—</span>
+            <div class="divider" style="margin:20px 0;"></div>
+            <div style="font-size:12px;color:var(--text-secondary);margin-bottom:16px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;">Account Stats</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+              <div style="text-align:center;padding:12px;background:var(--surface-2);border-radius:var(--radius-sm);border:1px solid var(--border);">
+                <div style="font-size:20px;font-weight:800;" id="profileTotal">—</div>
+                <div style="font-size:11px;color:var(--text-secondary);">Total</div>
+              </div>
+              <div style="text-align:center;padding:12px;background:var(--surface-2);border-radius:var(--radius-sm);border:1px solid var(--border);">
+                <div style="font-size:20px;font-weight:800;color:var(--warning);" id="profilePending">—</div>
+                <div style="font-size:11px;color:var(--text-secondary);">Pending</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card mb-16">
+            <div class="card-header" style="padding-bottom:4px;"><div class="card-title">Personal Information</div></div>
+            <div class="card-body">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                <div class="form-group" style="margin-bottom:0;">
+                  <label class="form-label">Full Name</label>
+                  <input type="text" id="editName" class="form-control" placeholder="Your full name">
+                </div>
+                <div class="form-group" style="margin-bottom:0;">
+                  <label class="form-label">Email</label>
+                  <input type="email" id="editEmail" class="form-control" readonly style="opacity:.7;cursor:not-allowed;">
+                </div>
+              </div>
+              <div style="margin-top:16px;">
+                <div class="form-group" style="margin-bottom:0;">
+                  <label class="form-label">Role</label>
+                  <input type="text" id="editRole" class="form-control" readonly style="opacity:.7;cursor:not-allowed;">
+                </div>
+              </div>
+              <div style="margin-top:20px;display:flex;gap:10px;">
+                <button class="btn btn-primary" onclick="saveProfile()">Save Changes</button>
+                <button class="btn btn-outline" onclick="resetProfile()">Reset</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header" style="padding-bottom:4px;"><div class="card-title">Security & Preferences</div></div>
+            <div class="card-body">
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--border);">
+                <div>
+                  <div style="font-size:13px;font-weight:600;color:var(--text-primary);">Password</div>
+                  <div style="font-size:12px;color:var(--text-secondary);">Change your account password</div>
+                </div>
+                <button class="btn btn-outline btn-sm" onclick="Toast.info('Coming soon','Password change will be available soon.')">Change</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--border);">
+                <div>
+                  <div style="font-size:13px;font-weight:600;color:var(--text-primary);">Dark Mode</div>
+                  <div style="font-size:12px;color:var(--text-secondary);">Toggle dark/light theme</div>
+                </div>
+                <button class="btn btn-outline btn-sm" id="themeToggle2" onclick="toggleAndSync()">🌙 Toggle</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;">
+                <div>
+                  <div style="font-size:13px;font-weight:600;color:var(--danger);">Sign Out</div>
+                  <div style="font-size:12px;color:var(--text-secondary);">Sign out of your account</div>
+                </div>
+                <button class="btn btn-outline btn-sm" style="border-color:var(--danger);color:var(--danger);" data-action="logout">Sign Out</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    if (!Auth.require()) return;
+    const user = Auth.getUser();
+    if (user) {
+      const initials = (user.name || user.email || '?').slice(0, 2).toUpperCase();
+      document.getElementById('profileAvatar').textContent = initials;
+      document.getElementById('profileName').textContent  = user.name  || '—';
+      document.getElementById('profileEmail').textContent = user.email || '—';
+      document.getElementById('profileRole').textContent  = user.role  || 'citizen';
+      document.getElementById('editName').value  = user.name  || '';
+      document.getElementById('editEmail').value = user.email || '';
+      document.getElementById('editRole').value  = user.role  || '';
+    }
+    const { ok, data } = await apiFetch('/traffic/violations');
+    if (ok) {
+      const vs = data.violations || [];
+      document.getElementById('profileTotal').textContent   = vs.length;
+      document.getElementById('profilePending').textContent = vs.filter(v => v.status === 'pending').length;
+    }
+  });
+
+  function saveProfile() {
+    const name = document.getElementById('editName').value.trim();
+    if (!name) { Toast.error('Required', 'Name cannot be empty'); return; }
+    const user = Auth.getUser() || {};
+    user.name = name;
+    localStorage.setItem('user', JSON.stringify(user));
+    document.getElementById('profileName').textContent = name;
+    Toast.success('Profile saved', 'Your name has been updated.');
+    initSidebar();
+  }
+
+  function resetProfile() {
+    const user = Auth.getUser();
+    document.getElementById('editName').value = user?.name || '';
+    Toast.info('Reset', 'Changes discarded.');
+  }
+
+  function toggleAndSync() {
+    const next = Theme.toggle();
+    const icon = next === 'dark' ? '☀️' : '🌙';
+    const btn  = document.getElementById('themeToggle');
+    const btn2 = document.getElementById('themeToggle2');
+    if (btn) btn.textContent = icon;
+    if (btn2) btn2.textContent = icon + ' Toggle';
+  }
+</script>
+</body>
+</html>
